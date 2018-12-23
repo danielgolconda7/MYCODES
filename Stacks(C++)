@@ -1,0 +1,47 @@
+#include <iostream>
+#include<bits/stdc++.h>
+using namespace std;
+int main() 
+{
+	
+	int tc;
+	cin >> tc;
+	while(tc--)
+	{
+	    long int n,flag=0,c=0,a;
+	    cin >> n;
+	    vector<int> v ;
+	    for (int i=0;i<n;i++)
+	    {
+	        cin>>a;
+	        v.push_back(a);
+	    }
+	
+	    vector <int>::iterator s = v.begin();
+	    vector <int>::iterator e = v.end();
+	    for (s=v.begin();s!=e;s++)
+	    {
+	        if(*s==0&&c>0)
+	        {
+	            c--;
+	        }
+	        else if(*s==1&&c>=0)
+	        {
+	            c++;
+	        }
+	        else if(*s==0&&c==0)
+	        {
+	            flag=1;
+	            break;
+	        }
+	    }
+	    if(flag==0)
+	    {
+	        cout<<"Valid"<<endl;
+	    }
+	    else
+	    {
+	        cout<<"Invalid"<<endl;
+	    }
+	}
+}
